@@ -1,0 +1,14 @@
+name: Security
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "46 8 * * 1"
+permissions:
+  contents: read
+jobs:
+  security:
+    uses: Workmates-Development-Team/security-automation/.github/workflows/reusable-security-scan.yml@8dd849fbe116036b35c6f0bfcf935a7f81c33c81
+    with:
+      blocking: false
+      severity: HIGH
